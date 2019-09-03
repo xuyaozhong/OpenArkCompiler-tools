@@ -1,0 +1,32 @@
+0. Ubuntu16.04 x64
+
+1. Install package 
+
+sudo apt-get -y install openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip lib32z1-dev qemu g++-multilib gcc-multilib libglib2.0-dev libpixman-1-dev linux-libc-dev:i386
+sudo apt-get -y install gcc-5-aarch64-linux-gnu g++-5-aarch64-linux-gnu
+
+
+2. Prepare env
+
+export MAPLE_ROOT=/4T/proj/huawei/OpenArkCompiler
+export GN_C_COMPILER=${MAPLE_ROOT}/tools/clang_llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang
+export GN_CXX_COMPILER=${MAPLE_ROOT}/tools/clang_llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang++
+export GN_AR_COMPILER=${MAPLE_ROOT}/tools/clang_llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/llvm-ar
+export GN=${MAPLE_ROOT}/tools/gn/gn
+export NINJA=${MAPLE_ROOT}/tools/ninja_1.9.0/ninja
+export MAPLE_BUILD_CORE={MAPLE_ROOT}/build/core
+
+Please update MAPLE_ROOT according to your workspace
+
+3. Get tools
+git clone https://code.opensource.huaweicloud.com/HarmonyOS/OpenArkCompiler.git
+git clone https://github.com/xuyaozhong/OpenArkCompiler-tools.git
+
+copy OpenArkCompiler-tools/tools into OpenArkCompiler workspace.
+
+e.g.
+OpenArkCompiler$ ls tools/
+clang_llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04  gn  ninja_1.9.0  README
+
+
+
